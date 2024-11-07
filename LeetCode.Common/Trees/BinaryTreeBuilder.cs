@@ -21,7 +21,8 @@ public static class BinaryTreeBuilder
 
         BinaryTreeNode<TValue> root = new(enumerator.Current.Value);
         Dictionary<int, BinaryTreeNode<TValue>> nodes = new() { { 0, root } };
-        
+        HashSet<int> skip = new();
+
         int index = 1;
         bool isEven = false;
         while (enumerator.MoveNext()) 
@@ -46,6 +47,12 @@ public static class BinaryTreeBuilder
                         parent.Left = current;
                 }    
             }
+            else
+                skip.Add(index);
+
+            if (skip.Contains(index / 2))
+                index += 2;
+
             index++;
             isEven = !isEven;
         }
@@ -72,6 +79,7 @@ public static class BinaryTreeBuilder
 
         BinaryTreeNode<TValue> root = new(enumerator.Current);
         Dictionary<int, BinaryTreeNode<TValue>> nodes = new() { { 0, root } };
+        HashSet<int> skip = new();
 
         int index = 1;
         bool isEven = false;
@@ -95,6 +103,12 @@ public static class BinaryTreeBuilder
                     parent.Left = current;
                 }
             }
+            else
+                skip.Add(index);
+
+            if (skip.Contains(index / 2))
+                index += 2;
+
             index++;
             isEven = !isEven;
         }
