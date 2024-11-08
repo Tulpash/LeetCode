@@ -1,4 +1,4 @@
-﻿// 994. Rotting Oranges
+﻿// 994.Rotting Oranges
 // https://leetcode.com/problems/rotting-oranges/description
 
 // You are given an m x n grid where each cell can have one of three values:

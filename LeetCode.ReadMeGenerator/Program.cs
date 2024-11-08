@@ -16,26 +16,21 @@ if (File.Exists(readMeFile))
 
 using (StreamWriter writer = new(readMeFile))
 {
-    writer.WriteLine("## Table of contents");
-    writer.WriteLine("- [Easy](#-easy)");
-    writer.WriteLine("- [Medium](#-medium)");
-    writer.WriteLine("- [Hard](#-hard)");
-    writer.WriteLine();
-
-    writer.WriteLine("### Easy"); 
-    WriteLines(writer, easy);
-    writer.WriteLine("### Medium");
-    WriteLines(writer, medium);
-    writer.WriteLine("### Hard");
-    WriteLines(writer, hard);
+    WriteLines(writer, easy, "Easy");
+    WriteLines(writer, medium, "Medium");
+    WriteLines(writer, hard, "Hard");
 }
    
-void WriteLines(StreamWriter writer, List<Line> lines)
+void WriteLines(StreamWriter writer, List<Line> lines, string tableName)
 {
-    writer.WriteLine("|Id|Name|Link|");
-    writer.WriteLine("|:-|:-|:-|");
-    foreach (Line line in lines)
-        writer.WriteLine($"|{line.Number}|{line.Name}|{line.Link}|");
+    writer.WriteLine($"### {tableName}");
+    if (lines.Any())
+    {
+        writer.WriteLine("|Id|Name|Link|");
+        writer.WriteLine("|:-|:-|:-|");
+        foreach (Line line in lines)
+            writer.WriteLine($"|{line.Number}|{line.Name}|{line.Link}|");
+    }
     writer.WriteLine();
 }
 List<Line> GetLinesFromDirectory(string directory)
@@ -52,23 +47,24 @@ List<Line> GetLinesFromDirectory(string directory)
 
         using (StreamReader reader = new(file))
         {
-            string? first = reader.ReadLine();
-            string? second = reader.ReadLine();
+            string first = reader.ReadLine() ?? string.Empty;
+            string second = reader.ReadLine() ?? string.Empty;
 
             lines.Add(new()
             {
-                Number = int.Parse(first?.Substring(2).Split(".")[0].Trim() ?? "-1"),
-                Name = first?.Substring(2).Split(".")[1].Trim(),
-                Link = second?.Substring(2)
+                Number = int.TryParse(first.AsSpan(3, first.IndexOf('.') - 3), out int num) ? num : -1, 
+                Name = first.AsMemory(first.IndexOf('.') + 1),
+                Link = second.AsMemory(2)
             });
         }
     }
 
     return lines.OrderBy(l => l.Number).ToList();
 }
-class Line
+
+struct Line
 {
     public int Number {  get; set; }
-    public string? Name { get; set; }
-    public string? Link { get; set; }
+    public ReadOnlyMemory<char>? Name { get; set; }
+    public ReadOnlyMemory<char>? Link { get; set; }
 }

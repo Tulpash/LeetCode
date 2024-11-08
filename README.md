@@ -1,6 +1,4 @@
 ### Easy
-|Id|Name|Link|
-|:-|:-|:-|
 
 ### Medium
 |Id|Name|Link|
