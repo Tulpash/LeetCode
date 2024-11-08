@@ -1,8 +1,3 @@
-## Table of contents
-- [Easy](#-easy)
-- [Medium](#-medium)
-- [Hard](#-hard)
-
 ### Easy
 |Id|Name|Link|
 |:-|:-|:-|
