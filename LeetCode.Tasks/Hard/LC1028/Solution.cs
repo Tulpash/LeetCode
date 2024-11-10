@@ -6,7 +6,7 @@
 // If a node has only one child, that child is guaranteed to be the left child.
 // Given the output traversal of this traversal, recover the tree and return its root.
 
-using LeetCode.Common.Default;
+using LeetCode.Common.Default.Tree;
 using System.Text;
 
 namespace LeetCode.Tasks.Hard.LC1028;

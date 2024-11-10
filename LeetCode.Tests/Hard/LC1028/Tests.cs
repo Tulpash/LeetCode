@@ -1,4 +1,4 @@
-﻿using LeetCode.Common.Default;
+﻿using LeetCode.Common.Default.Tree;
 using LeetCode.Tasks.Hard.LC1028;
 
 namespace LeetCode.Tests.Hard.LC1028;

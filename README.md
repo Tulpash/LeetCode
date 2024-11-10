@@ -10,6 +10,7 @@
 ### Hard
 |Id|Name|Link|
 |:-|:-|:-|
+|23|Merge k Sorted Lists| https://leetcode.com/problems/merge-k-sorted-lists/description/|
 |42|Trapping Rain Water| https://leetcode.com/problems/trapping-rain-water/|
 |980|Unique Paths III| https://leetcode.com/problems/unique-paths-iii/description/|
 |1028|Recover a Tree From Preorder Traversal| https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/description/|
