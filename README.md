@@ -12,6 +12,7 @@
 |:-|:-|:-|
 |23|Merge k Sorted Lists| https://leetcode.com/problems/merge-k-sorted-lists/description/|
 |42|Trapping Rain Water| https://leetcode.com/problems/trapping-rain-water/|
+|239|Sliding Window Maximum| https://leetcode.com/problems/sliding-window-maximum/|
 |980|Unique Paths III| https://leetcode.com/problems/unique-paths-iii/description/|
 |1028|Recover a Tree From Preorder Traversal| https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/description/|
 |1402|Reducing Dishes| https://leetcode.com/problems/reducing-dishes/description/|
