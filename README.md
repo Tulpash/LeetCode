@@ -12,6 +12,7 @@
 |:-|:-|:-|
 |4|Median of Two Sorted Arrays| https://leetcode.com/problems/median-of-two-sorted-arrays/description/|
 |23|Merge k Sorted Lists| https://leetcode.com/problems/merge-k-sorted-lists/description/|
+|41|First Missing Positive| https://leetcode.com/problems/first-missing-positive/description/|
 |42|Trapping Rain Water| https://leetcode.com/problems/trapping-rain-water/|
 |124|Binary Tree Maximum Path Sum| https://leetcode.com/problems/binary-tree-maximum-path-sum/description/|
 |239|Sliding Window Maximum| https://leetcode.com/problems/sliding-window-maximum/|
